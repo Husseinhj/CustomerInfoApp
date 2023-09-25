@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="viewModel"
+            type="com.husseinhj.customerinfoapp.presentation.user_list.UserListViewModel" />
+
+    </data>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.user_list.UserListFragment">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            app:userList="@{viewModel.state.users}"
+            tools:listitem="@layout/user_list_item_layout"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            />
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:indeterminate="true"
+            android:layout_gravity="center"
+            style="?android:attr/progressBarStyleLarge"
+
+            android:visibility="@{viewModel.state.loading ? View.VISIBLE : View.GONE}"
+
+            />
+    </FrameLayout>
+</layout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CircleShape" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+    
+    <style name="Header01">
+        <item name="android:textSize">27sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/rubik</item>
+        <item name="android:textColor">@color/Content_Prominent</item>
+    </style>
+
+    <style name="Title01">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/rubik</item>
+        <item name="android:textColor">@color/Content_Prominent</item>
+    </style>
+
+    <style name="Title02">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">@font/rubik</item>
+        <item name="android:textColor">@color/Content_Core</item>
+    </style>
+
+    <style name="Subtitle01">
+        <item name="android:textSize">17sp</item>
+        <item name="android:fontFamily">@font/rubik</item>
+        <item name="android:textColor">@color/Content_Core</item>
+    </style>
+
+    <style name="Subtitle02">
+        <item name="android:textSize">17sp</item>
+        <item name="android:fontFamily">@font/rubik</item>
+        <item name="android:textColor">@color/Content_Subtle</item>
+    </style>
+
+    <style name="Body01">
+        <item name="android:textSize">17sp</item>
+        <item name="android:fontFamily">@font/rubik</item>
+        <item name="android:textColor">@color/Content_Core</item>
+    </style>
+    
+</resources>

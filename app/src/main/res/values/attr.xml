@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="header_text_color" format="color"/>
+    <attr name="title_text_color" format="color"/>
+    <attr name="body_text_color" format="color"/>
+    <attr name="subtitle_text_color" format="color"/>
+    <attr name="first_sticker_text_color" format="color"/>
+    <attr name="first_sticker_background_color" format="color"/>
+    <attr name="second_sticker_text_color" format="color"/>
+    <attr name="second_sticker_background_color" format="color"/>
+    <attr name="avatar_alt_text_color" format="color"/>
+    <attr name="avatar_alt_background_color" format="color"/>
+    <attr name="pre_title_text_color" format="color"/>
+    <attr name="screen_background_color" format="color"/>
+</resources>

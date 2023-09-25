@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+            name="avatarLink"
+            type="String" />
+        <variable
+            name="avatarAlt"
+            type="String" />
+        <variable
+            name="showAltText"
+            type="Boolean" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                tools:src="@drawable/ic_person_placeholder_24"
+                app:shapeAppearanceOverlay="@style/CircleShape"
+                android:visibility="@{ showAltText ? View.GONE : View.VISIBLE}"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                tools:text="AB"
+                android:gravity="center"
+                android:visibility="gone"
+                />
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

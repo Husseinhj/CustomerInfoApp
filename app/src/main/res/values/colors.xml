@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="Background_Alert_Subtle">#FCDDE4</color>
+    <color name="Background_Surface">#F4F5F8</color>
+    <color name="Background_Surface_Alt">#ECF1F4</color>
+    <color name="Background_Main">#FFFFFF</color>
+    <color name="Border_Separator">#CED4DA</color>
+    <color name="backgrounds_light">#F5F5F5</color>
+    <color name="Content_Alert">#F4587B</color>
+    <color name="Content_Core">#4A4A68</color>
+    <color name="Content_Prominent">#0E0E2C</color>
+    <color name="Content_Subtle">#8C8CA1</color>
+    <color name="secondary_gray">#797979</color>
+    <color name="text_legibility_high_emphasis">#170E2B</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+</resources>
