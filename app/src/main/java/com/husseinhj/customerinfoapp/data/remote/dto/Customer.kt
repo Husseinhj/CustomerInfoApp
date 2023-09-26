@@ -7,5 +7,5 @@ data class Customer(
     val imageUrl: String,
     val lastName: String,
     val phoneNumber: String,
-    var stickers: List<String>
+    var stickers: List<Sticker>
 )

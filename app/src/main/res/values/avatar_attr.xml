@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="UserAvatarView">
+        <attr name="avatar_url" format="string"/>
+        <attr name="avatar_alt" format="string"/>
+    </declare-styleable>
+</resources>

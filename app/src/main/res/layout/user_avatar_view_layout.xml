@@ -6,44 +6,42 @@
         <import type="android.view.View"/>
 
         <variable
-            name="avatarLink"
-            type="String" />
+            name="showAlt"
+            type="Boolean" />
         <variable
             name="avatarAlt"
             type="String" />
-        <variable
-            name="showAltText"
-            type="Boolean" />
     </data>
 
-    <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="@dimen/extra_extra_space"
+        android:layout_height="@dimen/extra_extra_space"
+        android:background="@drawable/avatar_background"
+        android:backgroundTint="@color/Background_Surface"
         >
 
-        <RelativeLayout
+        <com.google.android.material.textview.MaterialTextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+            tools:text="ab"
+            android:textAllCaps="true"
+            android:text="@{avatarAlt}"
+            android:gravity="center"
+            style="@style/Header02"
+            android:visibility="@{ showAlt == true ? View.VISIBLE : View.GONE }"
+            />
 
-                tools:src="@drawable/ic_person_placeholder_24"
-                app:shapeAppearanceOverlay="@style/CircleShape"
-                android:visibility="@{ showAltText ? View.GONE : View.VISIBLE}"
-                />
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/avatar_iv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
 
-            <com.google.android.material.textview.MaterialTextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+            app:shapeAppearanceOverlay="@style/CircleShape"
+            android:visibility="@{ showAlt == false ? View.VISIBLE : View.GONE }"
+            />
 
-                tools:text="AB"
-                android:gravity="center"
-                android:visibility="gone"
-                />
+    </RelativeLayout>
 
-        </RelativeLayout>
-
-    </com.google.android.material.card.MaterialCardView>
 </layout>

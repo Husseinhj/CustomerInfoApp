@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <style name="CircleShape" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
@@ -7,13 +7,22 @@
     
     <style name="Header01">
         <item name="android:textSize">27sp</item>
+        <item name="android:lineHeight" tools:targetApi="p">30sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:fontFamily">@font/rubik</item>
         <item name="android:textColor">@color/Content_Prominent</item>
     </style>
+    <style name="Header02">
+        <item name="android:textSize">22sp</item>
+        <item name="android:lineHeight" tools:targetApi="p">26sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/rubik</item>
+        <item name="android:textColor">@color/Content_Subtle</item>
+    </style>
 
     <style name="Title01">
         <item name="android:textSize">17sp</item>
+        <item name="android:lineHeight" tools:targetApi="p">20sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:fontFamily">@font/rubik</item>
         <item name="android:textColor">@color/Content_Prominent</item>
@@ -21,6 +30,7 @@
 
     <style name="Title02">
         <item name="android:textSize">18sp</item>
+        <item name="android:lineHeight" tools:targetApi="p">20sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:fontFamily">@font/rubik</item>
@@ -29,20 +39,29 @@
 
     <style name="Subtitle01">
         <item name="android:textSize">17sp</item>
+        <item name="android:lineHeight" tools:targetApi="p">20sp</item>
         <item name="android:fontFamily">@font/rubik</item>
         <item name="android:textColor">@color/Content_Core</item>
     </style>
 
     <style name="Subtitle02">
         <item name="android:textSize">17sp</item>
+        <item name="android:lineHeight" tools:targetApi="p">20sp</item>
         <item name="android:fontFamily">@font/rubik</item>
         <item name="android:textColor">@color/Content_Subtle</item>
     </style>
 
     <style name="Body01">
         <item name="android:textSize">17sp</item>
+        <item name="android:lineHeight" tools:targetApi="p">20sp</item>
         <item name="android:fontFamily">@font/rubik</item>
         <item name="android:textColor">@color/Content_Core</item>
+    </style>
+
+    <style name="Caption">
+        <item name="android:textSize">13sp</item>
+        <item name="android:lineHeight" tools:targetApi="p">16sp</item>
+        <item name="android:fontFamily">@font/rubik</item>
     </style>
     
 </resources>

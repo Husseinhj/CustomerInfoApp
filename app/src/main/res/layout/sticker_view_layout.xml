@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="stickerTitle"
+            type="String" />
+
+        <variable
+            name="stickerTextColor"
+            type="Integer" />
+
+        <variable
+            name="stickerBackgroundColor"
+            type="Integer" />
+    </data>
+
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/user_phone_number_tv"
+        style="@style/Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginHorizontal="@dimen/default_space"
+        android:layout_marginTop="@dimen/default_space"
+        android:layout_marginBottom="@dimen/large_space"
+
+        tools:text="Fam"
+        android:text="@{stickerTitle}"
+        android:gravity="center"
+        android:textAlignment="center"
+
+        android:layout_margin="@dimen/small_space"
+        android:paddingVertical="@dimen/small_space"
+        android:paddingHorizontal="@dimen/medium_space"
+
+        tools:textColor="@color/Content_Subtle"
+        android:textColor="@{stickerTextColor}"
+
+        android:background="@drawable/sticker_background"
+        tools:backgroundTint="@color/Content_Core"
+        android:backgroundTint="@{stickerBackgroundColor}"
+
+        />
+</layout>

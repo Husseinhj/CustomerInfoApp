@@ -22,14 +22,13 @@
         android:background="?android:attr/selectableItemBackground"
         >
 
-        <com.google.android.material.imageview.ShapeableImageView
+        <com.husseinhj.customerinfoapp.presentation.common.avatar_view.UserAvatarView
             android:id="@+id/avatar_iv"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="@dimen/extra_extra_space"
+            android:layout_height="@dimen/extra_extra_space"
 
-            app:remoteSrc="@{model.imageUrl}"
-            tools:src="@drawable/ic_person_placeholder_24"
-            app:shapeAppearanceOverlay="@style/CircleShape"
+            app:avatar_url="@{model.imageUrl}"
+            app:avatar_alt="@{String.valueOf(model.firstName.charAt(0)) + String.valueOf(model.lastName.charAt(0))}"
 
             android:layout_marginVertical="@dimen/large_space"
             android:layout_marginHorizontal="@dimen/default_space"
@@ -85,6 +84,20 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@id/avatar_iv"
             app:layout_constraintTop_toBottomOf="@id/user_full_name_tv" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            app:userStickers="@{model.stickers}"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/large_space"
+            android:layout_marginHorizontal="@dimen/default_space"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@id/user_phone_number_tv"
+            app:layout_constraintLeft_toRightOf="@id/user_phone_number_tv"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
