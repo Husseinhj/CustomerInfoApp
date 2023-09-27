@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Customer Info</string>
     <string name="user_list_title">Device holders</string>
+    <string name="toolbar_back_button_content_description">Return to the previous screen</string>
+    <string name="user_detail_screen_map_content_description">Map showing user location</string>
+    <string name="user_detail_screen_address_title">Address</string>
+    <string name="user_address_format">%1$s, %2$s %3$s</string>
 </resources>

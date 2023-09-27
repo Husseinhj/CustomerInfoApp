@@ -1,18 +1,22 @@
 package com.husseinhj.customerinfoapp.presentation.common
 
 import android.widget.LinearLayout
+import android.widget.TextView
 import com.husseinhj.customerinfoapp.R
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.husseinhj.customerinfoapp.data.remote.dto.Address
 import com.husseinhj.customerinfoapp.data.remote.dto.Sticker
 import com.husseinhj.customerinfoapp.data.remote.dto.Customer
 import com.husseinhj.customerinfoapp.util.applyDividerConfiguration
 import com.husseinhj.customerinfoapp.presentation.common.sticker_view.StickerView
 import com.husseinhj.customerinfoapp.presentation.user_list.component.adapter.UserItemAdapter
+import com.husseinhj.customerinfoapp.presentation.user_list.component.viewholder.UserListItemOnClickListener
 
-@BindingAdapter("userList")
-fun bindUserListAdapter(recyclerView: RecyclerView, users: List<Customer>) {
+@BindingAdapter("userList", "onItemClickListener", requireAll = true)
+fun bindUserListAdapter(recyclerView: RecyclerView, users: List<Customer>, onItemClickListener: UserListItemOnClickListener) {
     val adapter = recyclerView.adapter as? UserItemAdapter ?: UserItemAdapter()
+    adapter.setOnItemClickListener(onItemClickListener)
 
     recyclerView.applyDividerConfiguration()
     recyclerView.adapter = adapter
@@ -38,4 +42,15 @@ fun bindUserStickers(linearLayout: LinearLayout, stickers: List<Sticker>) {
 
         linearLayout.addView(stickerView)
     }
+}
+
+@BindingAdapter("userAddress")
+fun bindUserAddress(textView: TextView, address: Address) {
+    textView.text =
+        textView.context.getString(
+            R.string.user_address_format,
+            address.street,
+            address.zip,
+            address.city
+        )
 }

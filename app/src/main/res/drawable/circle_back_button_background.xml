@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/home" android:drawable="@drawable/ic_arrow_back_24" />
+    <!-- This sets the border color around the back button -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners
+                android:bottomLeftRadius="@dimen/extra_extra_space"
+                android:bottomRightRadius="@dimen/extra_extra_space"
+                android:topLeftRadius="@dimen/extra_extra_space"
+                android:topRightRadius="@dimen/extra_extra_space" />
+
+            <stroke android:width="1dp" android:color="@color/Border_Separator"/>
+        </shape>
+    </item>
+</layer-list>

@@ -15,6 +15,11 @@ class UserAvatarView @JvmOverloads constructor(
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
 ) : FrameLayout(context, attrs, defStyleAttr) {
+
+    private var binding: UserAvatarViewLayoutBinding = UserAvatarViewLayoutBinding.inflate(
+        LayoutInflater.from(context), this, true
+    )
+
     var avatarUrl: String = ""
         set(value) {
             field = value
@@ -28,31 +33,45 @@ class UserAvatarView @JvmOverloads constructor(
             binding.avatarAlt = field
         }
 
-    private var binding: UserAvatarViewLayoutBinding = UserAvatarViewLayoutBinding.inflate(
-        LayoutInflater.from(context),
-        this,
-        true
-    )
-
     init {
-        attrs?.let {
-            val typedArray = context.obtainStyledAttributes(it, R.styleable.UserAvatarView)
+
+        if (attrs != null) {
+            val typedArray = context.obtainStyledAttributes(attrs, R.styleable.UserAvatarView)
             if (typedArray.hasValue(R.styleable.UserAvatarView_avatar_url)) {
                 avatarUrl = typedArray.getString(R.styleable.UserAvatarView_avatar_url) ?: avatarUrl
+            } else {
+                binding.showAlt = true
             }
 
             if (typedArray.hasValue(R.styleable.UserAvatarView_avatar_alt)) {
                 avatarAlt = typedArray.getString(R.styleable.UserAvatarView_avatar_alt) ?: avatarAlt
             }
+            if (typedArray.hasValue(R.styleable.UserAvatarView_avatar_first_name) &&
+                typedArray.hasValue(R.styleable.UserAvatarView_avatar_last_name)) {
+                val firstName = typedArray.getString(R.styleable.UserAvatarView_avatar_first_name) ?: ""
+                val lastName = typedArray.getString(R.styleable.UserAvatarView_avatar_last_name) ?: ""
+
+                val firstCharOfName = firstName.firstOrNull() ?: ""
+                val firstCharOfLastName = lastName.firstOrNull() ?: ""
+
+                avatarAlt = "$firstCharOfName$firstCharOfLastName"
+            }
 
             typedArray.recycle()
+        } else {
+            binding.avatarAlt = "ab"
+            binding.showAlt = true
         }
     }
 
     private fun downloadImage(url: String, imageView: ShapeableImageView) {
-        Glide.with(imageView.context)
+        if (url.isEmpty() || url.isBlank()) {
+            binding.showAlt = true
+            return
+        }
+        Glide.with(context)
             .load(url)
-            .onCompletion { drawable, e ->
+            .onCompletion { drawable, _ ->
                 binding.showAlt = drawable == null
             }
             .into(imageView)

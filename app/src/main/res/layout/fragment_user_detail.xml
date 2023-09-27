@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="com.husseinhj.customerinfoapp.presentation.user_detail.UserDetailViewModel" />
+    </data>
+
+    <ScrollView
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".presentation.user_detail.UserDetailFragment">
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/mapView"
+                android:layout_width="match_parent"
+                android:layout_height="292dp"
+
+                app:liteMode="true"
+
+                app:userLatitude="@{viewModel.state.user.currentLatitude}"
+                app:userLongitude="@{viewModel.state.user.currentLongitude}"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:contentDescription="@string/user_detail_screen_map_content_description"
+                />
+
+            <com.husseinhj.customerinfoapp.presentation.common.avatar_view.UserAvatarView
+                android:id="@+id/user_avatar_view"
+                android:layout_width="@dimen/extra_extra_space"
+                android:layout_height="@dimen/extra_extra_space"
+
+                app:avatar_url="@{viewModel.state.user.imageUrl}"
+                app:avatar_first_name="@{viewModel.state.user.firstName}"
+                app:avatar_last_name="@{viewModel.state.user.lastName}"
+
+                android:layout_marginTop="@dimen/large_space"
+                android:layout_marginStart="@dimen/extra_space"
+
+                app:layout_constraintTop_toBottomOf="@id/mapView"
+                app:layout_constraintLeft_toLeftOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/full_name_tv"
+                style="@style/Header01"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:text="@{viewModel.state.user.firstName + ` ` + viewModel.state.user.lastName}"
+
+                android:layout_marginTop="@dimen/extra_space"
+                android:layout_marginHorizontal="@dimen/extra_space"
+                tools:text="Savannah Nguyen"
+
+                app:layout_constraintTop_toBottomOf="@id/user_avatar_view"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+
+            <LinearLayout
+                android:id="@+id/sticker_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                app:userStickers="@{viewModel.state.user.stickers}"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/default_space"
+                android:layout_marginHorizontal="@dimen/extra_space"
+
+                app:layout_constraintTop_toBottomOf="@id/full_name_tv"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/user_gender_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                style="@style/Subtitle02"
+
+                android:layout_marginTop="@dimen/default_space"
+                android:text="@{viewModel.state.user.gender.value}"
+
+                tools:text="Female"
+                app:layout_constraintTop_toBottomOf="@id/sticker_view"
+                app:layout_constraintLeft_toLeftOf="@id/full_name_tv"/>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/divider_view"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+
+                android:layout_marginHorizontal="@dimen/default_space"
+
+                app:layout_constraintTop_toTopOf="@id/user_gender_tv"
+                app:layout_constraintLeft_toRightOf="@id/user_gender_tv"
+                app:layout_constraintBottom_toBottomOf="@id/user_gender_tv"
+                />
+
+            <TextView
+                android:id="@+id/user_phone_number_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginHorizontal="@dimen/default_space"
+                android:text="@{viewModel.state.user.phoneNumber}"
+
+                style="@style/Subtitle01"
+
+                tools:text="+49 1511 97455411"
+
+                app:layout_constraintTop_toTopOf="@id/user_gender_tv"
+                app:layout_constraintLeft_toRightOf="@id/divider_view"
+                app:layout_constraintBottom_toBottomOf="@id/user_gender_tv" />
+
+            <TextView
+                android:id="@+id/address_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="@dimen/extra_space"
+                android:text="@string/user_detail_screen_address_title"
+
+                style="@style/Title02"
+
+                app:layout_constraintLeft_toLeftOf="@id/full_name_tv"
+                app:layout_constraintTop_toBottomOf="@id/user_gender_tv"
+                />
+
+            <TextView
+                android:id="@+id/address_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+
+                app:userAddress="@{viewModel.state.user.address}"
+                android:layout_marginTop="@dimen/default_space"
+                tools:text="Catrin-Hoffmann-Ring 1, 38952 \n Badoberan"
+
+                style="@style/Body01"
+
+                app:layout_constraintLeft_toLeftOf="@id/full_name_tv"
+                app:layout_constraintRight_toRightOf="@id/full_name_tv"
+                app:layout_constraintTop_toBottomOf="@id/address_title_tv"
+                />
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:indeterminate="true"
+                android:layout_gravity="center"
+                style="?android:attr/progressBarStyleLarge"
+
+                android:visibility="@{viewModel.state.loading ? View.VISIBLE : View.GONE}"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

@@ -9,6 +9,19 @@
         android:id="@+id/userListFragment"
         android:name="com.husseinhj.customerinfoapp.presentation.user_list.UserListFragment"
         android:label="@string/user_list_title"
-        tools:layout="@layout/fragment_user_list" />
+        tools:layout="@layout/fragment_user_list" >
+        <action
+            android:id="@+id/action_userListFragment_to_userDetailFragment"
+            app:destination="@id/userDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userDetailFragment"
+        android:name="com.husseinhj.customerinfoapp.presentation.user_detail.UserDetailFragment"
+        android:label=""
+        tools:layout="@layout/fragment_user_detail" >
+        <argument
+            android:name="userId"
+            app:argType="integer" />
+    </fragment>
 
 </navigation>

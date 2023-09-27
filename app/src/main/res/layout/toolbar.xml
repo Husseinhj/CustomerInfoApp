@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+            name="showBackButton"
+            type="Boolean" />
+
+        <variable
+            name="showTitle"
+            type="Boolean" />
+
+        <variable
+            name="title"
+            type="String" />
+
+        <variable
+            name="onBackPressed"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <com.google.android.material.appbar.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/back_button_ib"
+                android:layout_width="@dimen/extra_extra_space"
+                android:layout_height="@dimen/extra_extra_space"
+                android:layout_marginStart="@dimen/extra_space"
+
+                android:visibility="@{showBackButton == true ? View.VISIBLE : View.GONE}"
+                android:onClick="@{(v) -> onBackPressed.onClick(v)}"
+                android:background="@drawable/toolbar_back_button_background"
+                android:contentDescription="@string/toolbar_back_button_content_description"
+
+                android:src="@drawable/ic_arrow_back_24" />
+
+            <TextView
+                android:id="@+id/title_tv"
+                style="@style/Header01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="@{title}"
+                android:visibility="@{showTitle == true ? View.VISIBLE : View.GONE}"
+
+                android:layout_marginStart="@dimen/extra_space"
+                tools:text="New screen" />
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+</layout>

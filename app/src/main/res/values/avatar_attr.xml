@@ -3,5 +3,7 @@
     <declare-styleable name="UserAvatarView">
         <attr name="avatar_url" format="string"/>
         <attr name="avatar_alt" format="string"/>
+        <attr name="avatar_first_name" format="string"/>
+        <attr name="avatar_last_name" format="string"/>
     </declare-styleable>
 </resources>

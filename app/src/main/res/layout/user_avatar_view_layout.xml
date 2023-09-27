@@ -39,7 +39,6 @@
             android:layout_height="match_parent"
 
             app:shapeAppearanceOverlay="@style/CircleShape"
-            android:visibility="@{ showAlt == false ? View.VISIBLE : View.GONE }"
             />
 
     </RelativeLayout>

@@ -4,6 +4,16 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
     </style>
+
+    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textSize">27sp</item>
+        <item name="android:lineHeight" tools:targetApi="p">30sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/rubik</item>
+        <item name="android:textColor">@color/Content_Prominent</item>
+        <item name="android:homeAsUpIndicator">@drawable/ic_launcher_foreground</item>
+        <item name="homeAsUpIndicator">@drawable/ic_launcher_foreground</item>
+    </style>
     
     <style name="Header01">
         <item name="android:textSize">27sp</item>

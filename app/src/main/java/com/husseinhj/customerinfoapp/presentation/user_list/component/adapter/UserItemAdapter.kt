@@ -7,9 +7,12 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.husseinhj.customerinfoapp.data.remote.dto.Customer
 import com.husseinhj.customerinfoapp.databinding.UserListItemLayoutBinding
+import com.husseinhj.customerinfoapp.presentation.user_list.component.viewholder.UserListItemOnClickListener
 import com.husseinhj.customerinfoapp.presentation.user_list.component.viewholder.UserListItemViewHolder
 
 class UserItemAdapter @Inject constructor(): ListAdapter<Customer, UserListItemViewHolder>(DiffCallback()) {
+
+    private var onClickListener: UserListItemOnClickListener? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserListItemViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -20,6 +23,11 @@ class UserItemAdapter @Inject constructor(): ListAdapter<Customer, UserListItemV
 
     override fun onBindViewHolder(holder: UserListItemViewHolder, position: Int) {
         holder.setBind(getItem(position))
+        holder.setOnClick(onClickListener)
+    }
+
+    fun setOnItemClickListener(listener: UserListItemOnClickListener?) {
+        onClickListener = listener
     }
 
     class DiffCallback: DiffUtil.ItemCallback<Customer>() {

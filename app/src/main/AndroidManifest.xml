@@ -13,6 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CustomerInfoApp"
         tools:targetApi="31">
+
+        <!--API key should be in local.property but i put it here to be easy to access for test the code challenge-->
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyC-9BXGZXvchTw9_dqpqn5qw6_aA-d49Ak"/>
+
         <activity
             android:name=".presentation.MainActivity"
             android:exported="true">

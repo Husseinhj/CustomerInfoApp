@@ -10,3 +10,11 @@ fun bindUserAvatarUrl(userAvatarView: UserAvatarView, url: String?) {
 fun bindUserAvatarAlt(userAvatarView: UserAvatarView, alt: String?) {
     userAvatarView.avatarAlt = alt ?: ""
 }
+
+@BindingAdapter("avatar_first_name", "avatar_last_name", requireAll = true)
+fun bindMakeAltForAvatar(userAvatarView: UserAvatarView, firstName: String?, lastName: String?) {
+    val firstCharOfName = firstName?.firstOrNull() ?: ""
+    val firstCharOfLastName = lastName?.firstOrNull() ?: ""
+
+    userAvatarView.avatarAlt = "$firstCharOfName$firstCharOfLastName"
+}

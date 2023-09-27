@@ -6,6 +6,10 @@
         <import type="android.view.View"/>
 
         <variable
+            name="onItemClickListener"
+            type="com.husseinhj.customerinfoapp.presentation.user_list.component.viewholder.UserListItemOnClickListener" />
+
+        <variable
             name="viewModel"
             type="com.husseinhj.customerinfoapp.presentation.user_list.UserListViewModel" />
 
@@ -21,6 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
 
+            app:onItemClickListener="@{onItemClickListener}"
             app:userList="@{viewModel.state.users}"
             tools:listitem="@layout/user_list_item_layout"
             android:orientation="vertical"

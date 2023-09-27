@@ -6,6 +6,10 @@
         <import type="android.view.View"/>
 
         <variable
+            name="onClickedListener"
+            type="View.OnClickListener" />
+
+        <variable
             name="model"
             type="com.husseinhj.customerinfoapp.data.remote.dto.Customer" />
 
@@ -19,6 +23,7 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
+        android:onClick="@{(v) -> onClickedListener.onClick(v)}"
         android:background="?android:attr/selectableItemBackground"
         >
 
