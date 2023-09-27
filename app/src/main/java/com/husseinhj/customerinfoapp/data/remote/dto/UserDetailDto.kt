@@ -1,14 +1,16 @@
 package com.husseinhj.customerinfoapp.data.remote.dto
 
+import com.google.gson.annotations.SerializedName
+
 data class UserDetailDto(
-    val address: Address = Address(),
-    val currentLatitude: Double = 0.0,
-    val currentLongitude: Double = 0.0,
-    val firstName: String = "",
-    val gender: Gender = Gender.OTHER,
-    val id: Int = 0,
-    val imageUrl: String = "",
-    val lastName: String = "",
-    val phoneNumber: String = "",
-    val stickers: List<Sticker> = emptyList()
+    @SerializedName("address") val address: Address = Address(),
+    @SerializedName("currentLatitude") val currentLatitude: Double = 0.0,
+    @SerializedName("currentLongitude") val currentLongitude: Double = 0.0,
+    @SerializedName("firstName") val firstName: String = "",
+    @SerializedName("gender") val gender: Gender = Gender.OTHER,
+    @SerializedName("id") val id: Int = 0,
+    @SerializedName("imageUrl") val imageUrl: String = "",
+    @SerializedName("lastName") val lastName: String = "",
+    @SerializedName("phoneNumber") val phoneNumber: String = "",
+    @SerializedName("stickers") val stickers: List<Sticker> = emptyList()
 )
