@@ -1,4 +1,4 @@
-package com.husseinhj.customerinfoapp.presentation.user_detail
+package com.husseinhj.customerinfoapp.presentation.user_detail.util
 
 import android.view.ViewOutlineProvider
 import androidx.databinding.BindingAdapter

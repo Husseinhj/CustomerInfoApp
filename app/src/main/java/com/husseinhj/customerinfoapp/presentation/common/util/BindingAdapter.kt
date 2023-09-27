@@ -1,4 +1,4 @@
-package com.husseinhj.customerinfoapp.presentation.common
+package com.husseinhj.customerinfoapp.presentation.common.util
 
 import android.widget.LinearLayout
 import android.widget.TextView
