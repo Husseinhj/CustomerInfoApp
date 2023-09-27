@@ -5,14 +5,14 @@
         <item name="cornerSize">50%</item>
     </style>
 
-    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Light">
+    <style name="ToolbarTheme" parent="Base.Theme.CustomerInfoApp">
         <item name="android:textSize">27sp</item>
         <item name="android:lineHeight" tools:targetApi="p">30sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:fontFamily">@font/rubik</item>
-        <item name="android:textColor">@color/Content_Prominent</item>
-        <item name="android:homeAsUpIndicator">@drawable/ic_launcher_foreground</item>
-        <item name="homeAsUpIndicator">@drawable/ic_launcher_foreground</item>
+        <item name="android:textColor">?attr/header_text_color</item>
+        <item name="android:homeAsUpIndicator">@drawable/circle_back_button_background</item>
+        <item name="homeAsUpIndicator">@drawable/circle_back_button_background</item>
     </style>
     
     <style name="Header01">
@@ -20,14 +20,14 @@
         <item name="android:lineHeight" tools:targetApi="p">30sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:fontFamily">@font/rubik</item>
-        <item name="android:textColor">@color/Content_Prominent</item>
+        <item name="android:textColor">?attr/header_text_color</item>
     </style>
     <style name="Header02">
         <item name="android:textSize">22sp</item>
         <item name="android:lineHeight" tools:targetApi="p">26sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:fontFamily">@font/rubik</item>
-        <item name="android:textColor">@color/Content_Subtle</item>
+        <item name="android:textColor">?attr/avatar_alt_text_color</item>
     </style>
 
     <style name="Title01">
@@ -35,7 +35,7 @@
         <item name="android:lineHeight" tools:targetApi="p">20sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:fontFamily">@font/rubik</item>
-        <item name="android:textColor">@color/Content_Prominent</item>
+        <item name="android:textColor">?attr/title_text_color</item>
     </style>
 
     <style name="Title02">
@@ -51,21 +51,21 @@
         <item name="android:textSize">17sp</item>
         <item name="android:lineHeight" tools:targetApi="p">20sp</item>
         <item name="android:fontFamily">@font/rubik</item>
-        <item name="android:textColor">@color/Content_Core</item>
+        <item name="android:textColor">?attr/body_text_color</item>
     </style>
 
     <style name="Subtitle02">
         <item name="android:textSize">17sp</item>
         <item name="android:lineHeight" tools:targetApi="p">20sp</item>
         <item name="android:fontFamily">@font/rubik</item>
-        <item name="android:textColor">@color/Content_Subtle</item>
+        <item name="android:textColor">?attr/subtitle_text_color</item>
     </style>
 
     <style name="Body01">
         <item name="android:textSize">17sp</item>
         <item name="android:lineHeight" tools:targetApi="p">20sp</item>
         <item name="android:fontFamily">@font/rubik</item>
-        <item name="android:textColor">@color/Content_Core</item>
+        <item name="android:textColor">?attr/body_text_color</item>
     </style>
 
     <style name="Caption">

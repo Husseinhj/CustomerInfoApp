@@ -1,7 +1,22 @@
 <resources>
-    <!-- Base application theme. -->
-    <style name="Base.Theme.CustomerInfoApp" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    <style name="Base.Theme.CustomerInfoApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorSecondary">@color/Content_Alert</item>
+        <item name="screen_background_color">@color/white</item>
+        <item name="header_text_color">@color/white</item>
+        <item name="title_text_color">@color/white</item>
+        <item name="body_text_color">@color/Content_Core</item>
+        <item name="subtitle_text_color">@color/Content_Subtle</item>
+        <item name="first_sticker_text_color">@color/Content_Subtle</item>
+        <item name="first_sticker_background_color">@color/Background_Surface_Alt</item>
+        <item name="second_sticker_text_color">@color/Content_Alert</item>
+        <item name="second_sticker_background_color">@color/Background_Alert_Subtle</item>
+        <item name="avatar_alt_text_color">@color/Content_Subtle</item>
+        <item name="avatar_alt_background_color">@color/Background_Surface</item>
+        <item name="pre_title_text_color">@color/Content_Core</item>
+
+        <item name="android:statusBarColor">@color/black</item>
+        <item name="android:windowLightStatusBar">false</item>
     </style>
 </resources>
