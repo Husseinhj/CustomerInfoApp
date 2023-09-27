@@ -52,17 +52,6 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'com.google.android.gms:play-services-maps:18.1.0'
 
-    // Room
-    ksp("androidx.room:room-compiler:2.5.2")
-    implementation "androidx.room:room-ktx:2.5.2"
-    implementation "androidx.room:room-runtime:2.5.2"
-    annotationProcessor "androidx.room:room-compiler:2.5.2"
-
-    // RX
-    implementation 'com.jakewharton.rxbinding4:rxbinding:4.0.0'
-    implementation 'com.jakewharton.rxbinding4:rxbinding-core:4.0.0'
-    implementation 'com.jakewharton.rxbinding4:rxbinding-appcompat:4.0.0'
-
     // Navigation Component
     implementation 'androidx.fragment:fragment-ktx:1.6.1'
     implementation "androidx.navigation:navigation-ui-ktx:2.7.3"
